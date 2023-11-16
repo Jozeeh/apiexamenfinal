@@ -17,7 +17,9 @@ use App\Http\Controllers\HospitalesController;
 |
 */
 
-Route::get('/getPaises', [PaisesController::class, 'index']);
+// --------------------
+// Rutas de sesion
+// --------------------
 
 // endpoint de registro
 Route::post('/registro', [AuthController::class, 'store']);
@@ -25,13 +27,24 @@ Route::post('/registro', [AuthController::class, 'store']);
 // endpoint de login
 Route::post('/login', [AuthController::class, 'login']);
 
-// --------------------
-// Rutas de hospitales
-// --------------------
+// PROTEGEMOS LAS RUTAS
+Route::middleware('auth:sanctum')->group(function () {
+    // --------------------
+    // Rutas de paises
+    // --------------------
 
-// endpoint de listar hospitales
-Route::get('/hospitales/select', [HospitalesController::class, 'select']);
-// endpoint de crear hospital
-Route::post('/hospitales/store', [HospitalesController::class, 'store']);
-// endpoint de eliminar hospital
-Route::delete('/hospitales/delete/{id}', [HospitalesController::class, 'delete']);
+    // endpoint de listar paises
+    Route::get('/paises/select', [PaisesController::class, 'index']);
+
+    // --------------------
+    // Rutas de hospitales
+    // --------------------
+
+    // endpoint de listar hospitales
+    Route::get('/hospitales/select', [HospitalesController::class, 'select']);
+    // endpoint de crear hospital
+    Route::post('/hospitales/store', [HospitalesController::class, 'store']);
+    // endpoint de eliminar hospital
+    Route::delete('/hospitales/delete/{id}', [HospitalesController::class, 'delete']);
+});
+
