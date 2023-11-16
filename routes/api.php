@@ -17,9 +17,7 @@ use App\Http\Controllers\HospitalesController;
 |
 */
 
-// --------------------
-// Rutas de sesiones
-// --------------------
+Route::get('/getPaises', [PaisesController::class, 'index']);
 
 // endpoint de registro
 Route::post('/registro', [AuthController::class, 'store']);
