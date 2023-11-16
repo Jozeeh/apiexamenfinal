@@ -9,7 +9,7 @@ class HospitalModel extends Model
 {
     use HasFactory;
     protected $table = 'hospitales';
-    protected $primarykey = 'idHospital';
+    protected $primaryKey = 'idHospital';
 
     protected $fillable = [
         'nombre', 'direccion', 'fkIdPais'

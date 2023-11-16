@@ -34,4 +34,4 @@ Route::get('/hospitales/select', [HospitalesController::class, 'select']);
 // endpoint de crear hospital
 Route::post('/hospitales/store', [HospitalesController::class, 'store']);
 // endpoint de eliminar hospital
-Route::delete('/hospitales/find/{id}', [HospitalesController::class, 'delete']);
+Route::delete('/hospitales/delete/{id}', [HospitalesController::class, 'delete']);
