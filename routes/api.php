@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HospitalesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +16,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// --------------------
+// Rutas de sesiones
+// --------------------
+
 // endpoint de registro
 Route::post('/registro', [AuthController::class, 'store']);
 
 // endpoint de login
 Route::post('/login', [AuthController::class, 'login']);
+
+// --------------------
+// Rutas de hospitales
+// --------------------
+
+// endpoint de listar hospitales
+Route::get('/hospitales/select', [HospitalesController::class, 'select']);
+// endpoint de crear hospital
+Route::post('/hospitales/store', [HospitalesController::class, 'store']);
+// endpoint de eliminar hospital
+Route::delete('/hospitales/find/{id}', [HospitalesController::class, 'delete']);
