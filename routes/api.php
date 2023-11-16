@@ -1,13 +1,9 @@
 <?php
 
-<<<<<<< HEAD
-=======
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PaisesController;
->>>>>>> bff64930591b49306c8271060feec3c861d31ad2
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HospitalesController;
 
 /*
@@ -21,13 +17,9 @@ use App\Http\Controllers\HospitalesController;
 |
 */
 
-<<<<<<< HEAD
 // --------------------
 // Rutas de sesiones
 // --------------------
-=======
-Route::get('/getPaises', [PaisesController::class, 'index']);
->>>>>>> bff64930591b49306c8271060feec3c861d31ad2
 
 // endpoint de registro
 Route::post('/registro', [AuthController::class, 'store']);
