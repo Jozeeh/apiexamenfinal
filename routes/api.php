@@ -19,4 +19,4 @@ use Illuminate\Support\Facades\Route;
 Route::post('/registro', [AuthController::class, 'store']);
 
 // endpoint de login
-Route::post('/login', [AuthController::class, 'login'])
+Route::post('/login', [AuthController::class, 'login']);
